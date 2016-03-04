@@ -15,8 +15,10 @@ class LazyMethod
     owner
     to_proc
     unbind
-    super_method
   )
+  if "2.2.0" <= RUBY_VERSION
+    METHOD_METHODS << :super_method
+  end
   METHOD_METHODS.each do |m|
     define_method(m) do
       @lazy_call_method = m
