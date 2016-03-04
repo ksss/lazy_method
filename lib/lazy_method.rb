@@ -24,6 +24,13 @@ class LazyMethod
     end
   end
 
+  def to_s
+    "#<LazyMethod #{@receiver}#{@lazy_call_method ? "(#{@lazy_call_method})" : ''}>"
+  end
+  alias inspect to_s
+
+  private
+
   def respond_to_missing?(name, _include_private)
     case name
     when :to_ary
@@ -41,11 +48,6 @@ class LazyMethod
       m
     end
   end
-
-  def to_s
-    "#<LazyMethod #{@receiver}#{@lazy_call_method ? "(#{@lazy_call_method})" : ''}>"
-  end
-  alias inspect to_s
 
   module API
     def method(name = nil)
