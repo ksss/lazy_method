@@ -1,5 +1,7 @@
 # LazyMethod
 
+Inspired by https://bugs.ruby-lang.org/issues/12125
+
 ## Usage
 
 ```ruby
