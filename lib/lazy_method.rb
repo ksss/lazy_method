@@ -41,6 +41,7 @@ class LazyMethod
   end
 
   def method_missing(name, *)
+    return unless respond_to_missing?(name, false)
     m = @receiver.__method__(name)
     if @lazy_call_method
       m.__send__ @lazy_call_method

@@ -18,7 +18,6 @@ module LazyMethodTest
       [-> { 1.method(:+@) }, -> { +(1.method) }],
       [-> { ary.method(:[]) }, -> { ary.method[0] }],
       [-> { ary.method(:[]=) }, -> { ary.method.[]=(0, 1) }],
-      [-> { ary.method(:to_ary) }, -> { ary.method.to_ary }],
     ].each do |expect_case, test_case|
       unless expect_case.call == test_case.call
         path, line = test_case.source_location
