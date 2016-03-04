@@ -1,5 +1,7 @@
 # LazyMethod
 
+[![Build Status](https://travis-ci.org/ksss/lazy_method.svg?branch=master)](https://travis-ci.org/ksss/lazy_method)
+
 Inspired by https://bugs.ruby-lang.org/issues/12125
 
 ## Usage
